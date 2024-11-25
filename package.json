@@ -2,6 +2,7 @@
   "name": "nsfw-detector",
   "private": false,
   "version": "1.0.0",
+  "description": "A powerful and privacy-focused NSFW content detection tool that leverages AI to analyze videos and images in real-time, right in your browser. Built with Vue 3 and Hugging Face Transformers, it provides professional visualization of detection results while ensuring all processing remains local - no content ever leaves your device.",
   "type": "module",
   "author": {
     "name": "ivwv",
@@ -32,7 +33,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@huggingface/transformers": "^2.7.0",
+    "@huggingface/transformers": "^3.7.1",
     "echarts": "^5.4.3",
     "vue": "^3.3.11"
   },
@@ -42,5 +43,9 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "vite": "^5.0.8"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
