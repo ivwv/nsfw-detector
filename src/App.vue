@@ -1,10 +1,10 @@
 <script setup>
-import VideoNSFWDetector from "./components/VideoNSFWDetector.vue";
+import NSFWDetector from "./components/NSFWDetector.vue";
 </script>
 
 <template>
   <div class="container">
-    <VideoNSFWDetector />
+    <NSFWDetector />
   </div>
 </template>
 

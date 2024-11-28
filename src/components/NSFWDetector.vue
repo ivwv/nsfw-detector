@@ -1,14 +1,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
-import { pipeline, RawImage } from "@huggingface/transformers";
+import { pipeline, RawImage, env } from "@huggingface/transformers";
 import * as echarts from "echarts";
+// env.remoteHost = "https://p.ivwv.site/huggingface.co/";
 
 const videoRef = ref(null);
 const chartRef = ref(null);
 const progressRef = ref(0);
 const statusRef = ref("");
 const chart = ref(null);
-const deviceType = ref("cpu");
+const deviceType = ref("wasm");
 const frameInterval = ref(1); // 默认每秒处理一帧
 
 // 配置参数
@@ -46,7 +47,7 @@ onMounted(async () => {
     statusRef.value = "Loading model...";
 
     // 尝试检测可用的设备
-    let device = "cpu"; // 默认使用 CPU
+    let device = "wasm"; // 默认使用 CPU
 
     try {
       if (navigator.gpu) {
@@ -61,7 +62,7 @@ onMounted(async () => {
 
     classifier = await pipeline("image-classification", "AdamCodd/vit-base-nsfw-detector", {
       device: device,
-      dtype: "fp32", // 改用 float32 而不是 fp32
+      // dtype: "fp32", // 改用 float32 而不是 fp32
       quantized: false,
     });
 
