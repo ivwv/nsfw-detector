@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { pipeline, RawImage, env } from "@huggingface/transformers";
 import * as echarts from "echarts";
-// env.remoteHost = "https://p.ivwv.site/huggingface.co/";
 
 const videoRef = ref(null);
 const chartRef = ref(null);
